@@ -1,0 +1,74 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: b55fe43fb99fddddbc8641dd271d74285f630af75389c00782a634b370234bd5
+
+name:           trivium
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/trivium#readme>
+homepage:       https://github.com/githubuser/trivium#readme
+bug-reports:    https://github.com/githubuser/trivium/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2019 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/trivium
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_trivium
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , bitarray
+    , bmp
+    , gloss
+    , bytestring
+    , directory
+    , split
+    , word8
+  default-language: Haskell2010
+
+executable trivium-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_trivium
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bitarray
+    , bmp
+    , gloss
+    , bytestring
+    , trivium
+  default-language: Haskell2010
+
+test-suite trivium-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_trivium
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bitarray
+    , trivium
+  default-language: Haskell2010
